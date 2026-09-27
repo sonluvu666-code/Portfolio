@@ -6,9 +6,9 @@ const projects = [
     year: "2025",
     title: "AgriYield 2025",
     subtitle: "Maize Yield Prediction",
-    summary: "Dự đoán năng suất ngô dựa trên dữ liệu nông nghiệp.",
+    summary: "Predicting maize yield based on agricultural data.",
     description:
-      "Dự án khai thác dữ liệu nông nghiệp để xây dựng bài toán dự đoán năng suất ngô. Quy trình tập trung vào xử lý dữ liệu, lựa chọn đặc trưng và thử nghiệm các mô hình Machine Learning nhằm hỗ trợ phân tích mùa vụ.",
+      "This project explores agricultural data to build a maize yield prediction model. The workflow focuses on data preprocessing, feature selection, and testing machine learning models to support seasonal analysis.",
     tags: ["Python", "Machine Learning", "Data Science"]
   },
   {
@@ -17,23 +17,23 @@ const projects = [
     categoryLabel: "AI / MACHINE LEARNING",
     year: "PROJECT",
     title: "Fake Job Posting Prediction",
-    subtitle: "Phân loại tin tuyển dụng giả",
-    summary: "Kết hợp DistilBERT và Gradient Boosting để nhận diện tin tuyển dụng đáng ngờ.",
+    subtitle: "Classifying fraudulent job posts",
+    summary: "Combining DistilBERT and Gradient Boosting to detect suspicious job listings.",
     description:
-      "Bài toán phân loại tin tuyển dụng thật và giả, kết hợp đặc trưng văn bản với thông tin có cấu trúc. Dự án thử nghiệm DistilBERT cho dữ liệu ngôn ngữ và Gradient Boosting để khai thác các đặc trưng dạng bảng.",
+      "The task involves classifying real versus fake job postings by combining text features with structured metadata. The project tested DistilBERT on language data and Gradient Boosting to exploit tabular feature patterns.",
     tags: ["Python", "DistilBERT", "Gradient Boosting"]
   },
   {
     id: "doi-pin",
     category: "community",
-    categoryLabel: "CỘNG ĐỒNG",
+    categoryLabel: "COMMUNITY",
     year: "GREEN LAB",
     title: "Đổi Pin Lấy Sen Đá",
-    subtitle: "Dự án cộng đồng cùng Green Lab",
-    summary: "Khuyến khích thu gom pin đã qua sử dụng thông qua hoạt động đổi quà.",
+    subtitle: "Community project with Green Lab",
+    summary: "Encouraging battery recycling through a community exchange program.",
     description:
-      "Dự án cộng đồng phối hợp cùng Green Lab, tạo điểm thu gom pin cũ và khuyến khích mọi người tham gia bằng hoạt động đổi pin lấy sen đá. Sáng kiến hướng tới nâng cao nhận thức về xử lý pin đúng cách.",
-    tags: ["Green Lab", "Cộng đồng", "Môi trường"]
+      "This community project collaborates with Green Lab to create collection points for used batteries and motivates participation through a battery-for-sen-da exchange program. The initiative aims to raise awareness about proper battery disposal and environmental responsibility.",
+    tags: ["Green Lab", "Community", "Environment"]
   }
 ];
 
@@ -139,7 +139,7 @@ dialog.addEventListener("click", (event) => {
 menuToggle.addEventListener("click", () => {
   const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
   menuToggle.setAttribute("aria-expanded", String(!isOpen));
-  menuToggle.setAttribute("aria-label", isOpen ? "Mở menu" : "Đóng menu");
+  menuToggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
   navLinks.classList.toggle("is-open", !isOpen);
 });
 
@@ -147,7 +147,7 @@ navLinks.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("is-open");
     menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Mở menu");
+    menuToggle.setAttribute("aria-label", "Open menu");
   });
 });
 
@@ -161,11 +161,11 @@ document.querySelector("#contact-form").addEventListener("submit", (event) => {
   const message = formData.get("message").toString().trim();
   const subject = encodeURIComponent(`Portfolio contact from ${name}`);
   const body = encodeURIComponent(
-    `Tên: ${name}\nEmail: ${email}\n\n${message}`
+    `Name: ${name}\nEmail: ${email}\n\n${message}`
   );
 
   document.querySelector("#form-status").textContent =
-    "Đang mở ứng dụng email. Nếu chưa được, hãy gửi trực tiếp qua email bên cạnh.";
+    "Opening your email app. If it does not open, please send directly via the email address below.";
 
   window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
 });
